@@ -1,10 +1,10 @@
-name: falcon
-display_name: Falcon theme
-version: 3.1.1
+name: papa-shop-theme
+display_name: Packing Panic Shop Theme
+version: 3.1.1-papa1
 author:
   name: "Igor Stępień"
   email: "igor@istepien.dev"
-  url: "https://github.com/Oksydan"
+  url: "https://github.com/packingpanic/shop-theme"
 
 meta:
   compatibility:

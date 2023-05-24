@@ -32,19 +32,26 @@
                         'js-current-step' => $step_is_current
                     ]|classnames}"
   >
-    <div class="card-header checkout-step__header" id="heading-{$identifier}" data-identifier="{$identifier}">
-      <p class="step-title js-step-title h5 mb-0">
-        <span class="step-number">{$position}.</span>
-        {$title}
-        <i class="material-icons font-reset rtl-no-flip text-success mx-2">&#xE876;</i>
+      <div class="card-header cursor-pointer checkout-step__header d-flex justify-content-between" id="heading-{$identifier}"
+           data-identifier="{$identifier}">
+          <p class="step-title js-step-title h5 mb-0">
+              <span class="step-number">{$position}.</span>
+              {$title}
+              <i class="material-icons font-reset rtl-no-flip text-success mx-2">&#xE876;</i>
+          </p>
+          {if $step_is_reachable}
+              <div class="ml-auto">
+                  <button class="step-edit text-muted btn btn-sm btn-link py-0" data-toggle="collapse" data-target="#content-{$identifier}" aria-expanded="{if $step_is_current}true{else}false{/if}" aria-controls="content-{$identifier}">
 
-        {if $step_is_reachable}
-          <button class="step-edit text-muted btn btn-sm btn-link float-right py-0" data-toggle="collapse" data-target="#content-{$identifier}" aria-expanded="{if $step_is_current}true{else}false{/if}" aria-controls="content-{$identifier}">
-            <i class="material-icons edit small">mode_edit</i> {l s='Edit' d='Shop.Theme.Actions'}
-          </button>
-        {/if}
-      </p>
-    </div>
+                      <i class="material-icons edit small">mode_edit</i> {l s='Edit' d='Shop.Theme.Actions'}
+
+                  </button>
+                  {if !$step_is_current && $step_is_complete}
+                      <i style="font-size: 17px" class="material-icons edit text-muted"></i>
+                  {/if}
+              </div>
+          {/if}
+      </div>
 
     <div class="content checkout-step__content card-body">
       {block name='step_content'}DUMMY STEP CONTENT{/block}

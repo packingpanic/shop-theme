@@ -5,4 +5,17 @@
   &--sm {
     max-width: 600px;
   }
+  .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: transparent;
+    color: #007bff;
+    font-weight: 450;
+  }
+
+  .nav-link {
+    background-color: #007bff;
+    color: #fff;
+  }
+
 }
+
+

@@ -28,23 +28,22 @@
             {hook h='displayFooterBefore'}
         {/block}
     </div>
-
-    <div class="footer-container">
-        <div class="container p-2">
-            <div class="row">
-                <div class="col">
-                    <div class="row">
-                        {block name='hook_footer'}
-                            {hook h='displayFooter'}
-                        {/block}
+</div>
+<div class="footer-container ">
+    <div class="container">
+        <div class="row ">
+            <div class="col  ">
+                <div class="row  ">
+                    {block name='hook_footer'}
+                        {hook h='displayFooter'}
+                    {/block}
+                    <div class="col-md-3 col-12 mb-lg-4">
+                            {include file='_partials/papa-credit-cards.tpl'}
                     </div>
-                </div>
-                <div class="col-auto">
-                    {include file='_partials/papa-credit-cards.tpl'}
                 </div>
             </div>
         </div>
-        </div>
+    </div>
 </div>
 
 

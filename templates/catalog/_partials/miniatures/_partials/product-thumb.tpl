@@ -15,18 +15,20 @@
             width="{$urls.no_picture_image.bySize.home_default.width}"
             height="{$urls.no_picture_image.bySize.home_default.height}"
           {/if}
-          class="img-fluid rounded lazyload"
-          />
+          class="img-fluid w-100 h-auto lazyload"
+        />
       {/images_block}
 
       {include file='catalog/_partials/product-flags.tpl'}
     </a>
 
+{*
     {block name='quick_view'}
       <a class="quick-view product-miniature__functional-btn btn btn-light shadow rounded-circle" href="#" data-link-action="quickview">
         <span class="material-icons product-miniature__functional-btn-icon">visibility</span>
       </a>
     {/block}
+*}
 
 
     {block name='product_reviews'}

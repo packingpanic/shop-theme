@@ -35,6 +35,7 @@
       {block name='hook_footer'}
         {hook h='displayFooter'}
       {/block}
+      {include file='_partials/papa-credit-cards.tpl'}
     </div>
     <div class="row">
       {block name='hook_footer_after'}

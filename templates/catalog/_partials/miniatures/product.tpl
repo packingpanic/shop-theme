@@ -32,19 +32,31 @@
     {/if}
     >
     <article
-      class="product-miniature card js-product-miniature p-2 h-100 {block name='product_miniature_item_class'}{/block}"
-      data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}"
-      >
-      {include file='catalog/_partials/miniatures/_partials/product-thumb.tpl' thumbExtraClass='mb-2'}
+      class="product-miniature card js-product-miniature border h-100 {block name='product_miniature_item_class'}{/block}"
+      data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}">
+      <div class="image-container w-100 overflow-hidden">
+        {include file='catalog/_partials/miniatures/_partials/product-thumb.tpl' thumbExtraClass='mb-2'}
+      </div>
 
-      {include file='catalog/_partials/miniatures/_partials/product-title.tpl'}
+      <div class="p-2 d-flex flex-column justify-content-center align-items-between">
+        {include file='catalog/_partials/miniatures/_partials/product-title.tpl'}
 
-      {include file='catalog/_partials/miniatures/_partials/product-prices.tpl'}
+        <div class="d-flex flex justify-content-between align-items-center  ">
+          <div  class=" d-flex flex-column justify-content-center align-items-center">
 
-      {block name='product_form'}
-        {include file='catalog/_partials/miniatures/_partials/product-form.tpl'}
-      {/block}
+            {foreach from=$product.grouped_features item=feature}
+              {if $feature.name == "Weight" || $feature.name == "Gewicht"}
+                <span  class="weight  mb-sm-0">{$feature.value}</span>
+              {/if}
+            {/foreach}
+          </div>
 
+          <div class="flex align-items-end">
+            {include file='catalog/_partials/miniatures/_partials/product-prices.tpl'}
+          </div>
+        </div>
+      </div>
     </article>
+
   </div>
 {/block}
